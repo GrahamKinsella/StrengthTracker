@@ -7,7 +7,7 @@
              x:Class="StrengthTracker.App">
     <Application.Resources>
 
-        <!--<Thickness x:Key="PageMargin">20</Thickness>-->
+        <Thickness x:Key="PageMargin">20</Thickness>
 
         <!-- Colors -->
         <Color x:Key="AppBackgroundColor">AliceBlue</Color>
