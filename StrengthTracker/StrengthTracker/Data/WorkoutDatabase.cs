@@ -13,6 +13,7 @@ namespace StrengthTracker.Data
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Workout>().Wait();
+            _database.CreateTableAsync<Exercise>().Wait();
         }
 
         public Task<List<Workout>> GetWorkoutAsync()
@@ -23,13 +24,13 @@ namespace StrengthTracker.Data
         public Task<Workout> GetWorkoutAsync(int id)
         {
             return _database.Table<Workout>()
-                            .Where(i => i.ID == id)
+                            .Where(i => i.WorkoutId == id)
                             .FirstOrDefaultAsync();
         }
 
         public Task<int> SaveWorkoutAsync(Workout workout)
         {
-            if (workout.ID != 0)
+            if (workout.WorkoutId != 0)
             {
                 return _database.UpdateAsync(workout);
             }

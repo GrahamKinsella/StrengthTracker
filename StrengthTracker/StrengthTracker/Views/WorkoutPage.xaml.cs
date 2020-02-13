@@ -21,7 +21,7 @@ namespace StrengthTracker
             listView.ItemsSource = await App.Database.GetWorkoutAsync();
         }
 
-        async void OnNoteAddedClicked(object sender, EventArgs e)
+        async void OnAddWorkoutClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new WorkoutEntryPage
             {

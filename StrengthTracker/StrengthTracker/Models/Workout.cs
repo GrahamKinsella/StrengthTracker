@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace StrengthTracker.Models
@@ -8,8 +9,9 @@ namespace StrengthTracker.Models
     public class Workout
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
-        public string Text { get; set; }
+        public int WorkoutId { get; set; }
         public DateTime Date { get; set; }
+        [Ignore]
+        public List<Exercise> Exercise { get; set; }
     }
 }

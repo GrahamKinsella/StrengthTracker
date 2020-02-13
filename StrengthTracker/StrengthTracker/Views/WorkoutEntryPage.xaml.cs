@@ -14,16 +14,16 @@ namespace StrengthTracker
 
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            var note = (Workout)BindingContext;
-            note.Date = DateTime.UtcNow;
-            await App.Database.SaveWorkoutAsync(note);
+            var workout = (Workout)BindingContext;
+            workout.Date = DateTime.UtcNow;
+            await App.Database.SaveWorkoutAsync(workout);
             await Navigation.PopAsync();
         }
 
         async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            var note = (Workout)BindingContext;
-            await App.Database.DeleteWorkoutAsync(note);
+            var workout = (Workout)BindingContext;
+            await App.Database.DeleteWorkoutAsync(workout);
             await Navigation.PopAsync();
         }
     }

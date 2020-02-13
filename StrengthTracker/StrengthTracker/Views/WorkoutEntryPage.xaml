@@ -21,7 +21,13 @@
     </ContentPage.Resources>
 
     <StackLayout Margin="{StaticResource PageMargin}">
-        <Editor Placeholder="Enter your note"
+        <Editor Placeholder="Exercise"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+        <Editor Placeholder="Weight"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+        <Editor Placeholder="Reps"
                 Text="{Binding Text}"
                 HeightRequest="100" />
         <Grid>
